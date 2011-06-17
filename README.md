@@ -3,7 +3,7 @@ What is it?
 
 I put together a simple jmeter test framework with start scripts for Linux/Unix/Solaris and Windows.
 
-*It's easy to use and easily configurable.*
+**It's easy to use and easily configurable.**
 
 All you need is a host to test and at least one URL list.
 
@@ -11,6 +11,8 @@ All settings can be individually set for all threadgroups so that one threadgrou
 Currently, ten threadgroups are implemented.
 
 You can start the test locally or remotely on JMeter servers if you want to.
+
+This test (with the properties) also works with the [maven-jmeter-plugin](https://github.com/Ronnie76er/jmeter-maven-plugin)
 
 Preparation
 -----------
@@ -69,8 +71,8 @@ You can either modify the config file `test.conf` to fit your needs, or pass all
 ### Windows
 
 Two cmd executables are included:
-* `test.cmd` - starts the JMeter GUI and loads the test and properties
-* `test-noGUI.cmd` - starts JMeter without the GUI
+ * `test.cmd` - starts the JMeter GUI and loads the test and properties
+ * `test-noGUI.cmd` - starts JMeter without the GUI
 
 URL lists
 ---------
