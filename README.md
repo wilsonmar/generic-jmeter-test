@@ -2,16 +2,16 @@
 
 I put together a simple jmeter test framework with start scripts for Linux/Unix/Solaris/OSX and Windows.
 
-**It's easy to use and easily configurable.**
+## Why should I use it? ##
 
-All you need is a host to test and at least one URL list.
-
-All settings can be individually set for all threadgroups so that one threadgroup could test articles, one overview pages and another one images.
-Currently, ten different threadgroups are implemented.
-
-You can start the test locally or remotely on JMeter servers if you want to.
-
-This test (with the properties) also works with the [maven-jmeter-plugin](https://github.com/Ronnie76er/jmeter-maven-plugin)
+ * It's easy to use and easily configurable.
+ * Everything you will have to do is adapt the `test.properties`
+ * You won't have to change the test if you want to test different websites/web applications
+ * All you need is a host to test and at least one URL list.
+ * All settings can be individually set for all threadgroups so that one threadgroup could test articles, one overview pages and another one images.
+    Currently, ten different threadgroups are implemented.
+ * You can start the test locally or remotely on JMeter servers if you want to.
+ * This test (with the properties) also works with the [maven-jmeter-plugin](https://github.com/Ronnie76er/jmeter-maven-plugin)
 
 ## Contents ##
 
