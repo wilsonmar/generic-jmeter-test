@@ -14,8 +14,8 @@ set testFile=test.jmx
 set resultFile=result.csv
 set jmeterLogFile='jmeter_'yyyyMMddHHmmss'.log'
 
-rem "-n" means no GUI
-set jmeterArgs=-n
+rem "-n" means no GUI, "-r" means that test will be started on remote servers
+set jmeterArgs=-n -r
 rem set jmeterArgs=
 
 rem uncomment for debug logging from jmeter
