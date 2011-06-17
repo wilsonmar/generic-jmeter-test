@@ -71,9 +71,8 @@ You can either modify the config file `test.conf` to fit your needs, or pass all
 ### Windows
 
 Two cmd executables are included:
-
- * `test.cmd` - starts the JMeter GUI and loads the test and properties
- * `test-noGUI.cmd` - starts JMeter without the GUI
+  * `test.cmd` - starts the JMeter GUI and loads the test and properties
+  * `test-noGUI.cmd` - starts JMeter without the GUI
 
 URL lists
 ---------
