@@ -1,1338 +1,1338 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="2.1">
-	<hashTree>
-		<TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Testplan" enabled="true">
-			<stringProp name="TestPlan.comments">This is the main test plan</stringProp>
-			<boolProp name="TestPlan.functional_mode">false</boolProp>
-			<boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
-			<elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel"
-						 testclass="Arguments" testname="User defined variables" enabled="true">
-				<collectionProp name="Arguments.arguments"/>
-			</elementProp>
-			<stringProp name="TestPlan.user_define_classpath"></stringProp>
-		</TestPlan>
-		<hashTree>
-			<Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
-				<collectionProp name="Arguments.arguments">
-					<elementProp name="server" elementType="Argument">
-						<stringProp name="Argument.name">server</stringProp>
-						<stringProp name="Argument.value">${__property(server)}</stringProp>
-						<stringProp name="Argument.metadata">=</stringProp>
-					</elementProp>
-					<elementProp name="port" elementType="Argument">
-						<stringProp name="Argument.name">port</stringProp>
-						<stringProp name="Argument.value">${__property(port)}</stringProp>
-						<stringProp name="Argument.metadata">=</stringProp>
-					</elementProp>
-					<elementProp name="urlListPath" elementType="Argument">
-						<stringProp name="Argument.name">urlListPath</stringProp>
-						<stringProp name="Argument.value">${__property(urlListPath)}</stringProp>
-						<stringProp name="Argument.metadata">=</stringProp>
-					</elementProp>
-					<elementProp name="urlPrefix" elementType="Argument">
-						<stringProp name="Argument.name">urlPrefix</stringProp>
-						<stringProp name="Argument.value">${__javaScript( &quot;${__property(urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}</stringProp>
-						<stringProp name="Argument.metadata">=</stringProp>
-					</elementProp>
-					<elementProp name="jmeterServerId" elementType="Argument">
-						<stringProp name="Argument.name">jmeterServerId</stringProp>
-						<stringProp name="Argument.value">${__machineName}:${__P(server_port,1099)}</stringProp>
-						<stringProp name="Argument.metadata">=</stringProp>
-					</elementProp>
-					<elementProp name="connectionTimeout" elementType="Argument">
-						<stringProp name="Argument.name">connectionTimeout</stringProp>
-						<stringProp name="Argument.value">${__P(connectionTimeout,0)}</stringProp>
-						<stringProp name="Argument.metadata">=</stringProp>
-					</elementProp>
-					<elementProp name="responseTimeout" elementType="Argument">
-						<stringProp name="Argument.name">responseTimeout</stringProp>
-						<stringProp name="Argument.value">${__P(responseTimeout,0)}</stringProp>
-						<stringProp name="Argument.metadata">=</stringProp>
-					</elementProp>
-				</collectionProp>
-				<stringProp name="TestPlan.comments">via test.properties</stringProp>
-			</Arguments>
-			<hashTree/>
-			<ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="ResultsTree"
-							 enabled="false">
-				<boolProp name="ResultCollector.error_logging">false</boolProp>
-				<objProp>
-					<name>saveConfig</name>
-					<value class="SampleSaveConfiguration">
-						<time>true</time>
-						<latency>true</latency>
-						<timestamp>true</timestamp>
-						<success>true</success>
-						<label>true</label>
-						<code>true</code>
-						<message>true</message>
-						<threadName>true</threadName>
-						<dataType>true</dataType>
-						<encoding>false</encoding>
-						<assertions>true</assertions>
-						<subresults>true</subresults>
-						<responseData>false</responseData>
-						<samplerData>false</samplerData>
-						<xml>true</xml>
-						<fieldNames>false</fieldNames>
-						<responseHeaders>false</responseHeaders>
-						<requestHeaders>false</requestHeaders>
-						<responseDataOnError>false</responseDataOnError>
-						<saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-						<assertionsResultsToSave>0</assertionsResultsToSave>
-						<bytes>true</bytes>
-						<url>true</url>
-						<hostname>true</hostname>
-					</value>
-				</objProp>
-				<stringProp name="filename"></stringProp>
-			</ResultCollector>
-			<hashTree/>
-			<ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report"
-							 enabled="false">
-				<boolProp name="ResultCollector.error_logging">false</boolProp>
-				<objProp>
-					<name>saveConfig</name>
-					<value class="SampleSaveConfiguration">
-						<time>true</time>
-						<latency>true</latency>
-						<timestamp>true</timestamp>
-						<success>true</success>
-						<label>true</label>
-						<code>true</code>
-						<message>true</message>
-						<threadName>true</threadName>
-						<dataType>true</dataType>
-						<encoding>false</encoding>
-						<assertions>true</assertions>
-						<subresults>true</subresults>
-						<responseData>false</responseData>
-						<samplerData>false</samplerData>
-						<xml>true</xml>
-						<fieldNames>false</fieldNames>
-						<responseHeaders>false</responseHeaders>
-						<requestHeaders>false</requestHeaders>
-						<responseDataOnError>false</responseDataOnError>
-						<saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-						<assertionsResultsToSave>0</assertionsResultsToSave>
-						<bytes>true</bytes>
-						<url>true</url>
-						<hostname>true</hostname>
-					</value>
-				</objProp>
-				<stringProp name="filename"></stringProp>
-			</ResultCollector>
-			<hashTree/>
-			<ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer"
-							 enabled="false">
-				<boolProp name="ResultCollector.error_logging">false</boolProp>
-				<objProp>
-					<name>saveConfig</name>
-					<value class="SampleSaveConfiguration">
-						<time>true</time>
-						<latency>true</latency>
-						<timestamp>true</timestamp>
-						<success>false</success>
-						<label>true</label>
-						<code>true</code>
-						<message>false</message>
-						<threadName>true</threadName>
-						<dataType>true</dataType>
-						<encoding>false</encoding>
-						<assertions>true</assertions>
-						<subresults>true</subresults>
-						<responseData>false</responseData>
-						<samplerData>false</samplerData>
-						<xml>false</xml>
-						<fieldNames>false</fieldNames>
-						<responseHeaders>true</responseHeaders>
-						<requestHeaders>true</requestHeaders>
-						<responseDataOnError>false</responseDataOnError>
-						<saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-						<assertionsResultsToSave>0</assertionsResultsToSave>
-						<bytes>true</bytes>
-						<url>true</url>
-						<fileName>true</fileName>
-						<sampleCount>true</sampleCount>
-					</value>
-				</objProp>
-				<stringProp name="filename">${__P(resultFileInGuiMode,result.csv)}</stringProp>
-			</ResultCollector>
-			<hashTree/>
-			<ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results"
-							 enabled="false">
-				<boolProp name="ResultCollector.error_logging">false</boolProp>
-				<objProp>
-					<name>saveConfig</name>
-					<value class="SampleSaveConfiguration">
-						<time>true</time>
-						<latency>true</latency>
-						<timestamp>true</timestamp>
-						<success>true</success>
-						<label>true</label>
-						<code>false</code>
-						<message>true</message>
-						<threadName>true</threadName>
-						<dataType>false</dataType>
-						<encoding>false</encoding>
-						<assertions>false</assertions>
-						<subresults>true</subresults>
-						<responseData>false</responseData>
-						<samplerData>false</samplerData>
-						<xml>false</xml>
-						<fieldNames>false</fieldNames>
-						<responseHeaders>false</responseHeaders>
-						<requestHeaders>false</requestHeaders>
-						<responseDataOnError>false</responseDataOnError>
-						<saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-						<assertionsResultsToSave>0</assertionsResultsToSave>
-						<bytes>true</bytes>
-						<hostname>true</hostname>
-					</value>
-				</objProp>
-				<stringProp name="filename"></stringProp>
-			</ResultCollector>
-			<hashTree/>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup00.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup00.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup00.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup00.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup00.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup00.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup00.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup00.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup00.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup00.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup00.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup00.assertOK">${__P(threadgroup00.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup00.assertNotOK">${__P(threadgroup00.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup01.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup01.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup01.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup01.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup01.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup01.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup01.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup01.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup01.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup01.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup01.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup01.assertOK">${__P(threadgroup01.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup01.assertNotOK">${__P(threadgroup01.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup02.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup02.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup02.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup02.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup02.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup02.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup02.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup02.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup02.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup02.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup02.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup02.assertOK">${__P(threadgroup02.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup02.assertNotOK">${__P(threadgroup02.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup03.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup03.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup03.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup03.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup03.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup03.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup03.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup03.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup03.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup03.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup03.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup03.assertOK">${__P(threadgroup03.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup03.assertNotOK">${__P(threadgroup03.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup04.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup04.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup04.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup04.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup04.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup04.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup04.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup04.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup04.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup04.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup04.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup04.assertOK">${__P(threadgroup04.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup04.assertNotOK">${__P(threadgroup04.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup05.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup05.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup05.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup05.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup05.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup05.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup05.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup05.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup05.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup05.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup05.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup05.assertOK">${__P(threadgroup05.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup05.assertNotOK">${__P(threadgroup05.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup06.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup06.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup06.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup06.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup06.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup06.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript(&quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup06.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup06.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup06.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup06.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup06.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup06.assertOK">${__P(threadgroup06.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup06.assertNotOK">${__P(threadgroup06.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup07.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup07.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup07.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup07.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup07.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup07.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup07.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup07.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup07.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup07.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup07.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup07.assertOK">${__P(threadgroup07.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup07.assertNotOK">${__P(threadgroup07.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup08.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup08.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup08.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup08.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup08.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup08.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup08.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup08.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup08.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup08.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup08.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup08.assertOK">${__P(threadgroup08.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup08.assertNotOK">${__P(threadgroup08.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-			<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup09.name,none)}"
-						 enabled="true">
-				<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
-							 testclass="LoopController" testname="Loop Controller" enabled="true">
-					<boolProp name="LoopController.continue_forever">false</boolProp>
-					<stringProp name="LoopController.loops">${__P(threadgroup09.numberOfLoops,1)}</stringProp>
-				</elementProp>
-				<stringProp name="ThreadGroup.num_threads">${__P(threadgroup09.numberOfThreads,0)}</stringProp>
-				<stringProp name="ThreadGroup.ramp_time">${__P(threadgroup09.rampUp,1)}</stringProp>
-				<longProp name="ThreadGroup.start_time">0</longProp>
-				<longProp name="ThreadGroup.end_time">0</longProp>
-				<boolProp name="ThreadGroup.scheduler">true</boolProp>
-				<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-				<stringProp name="ThreadGroup.duration">${__P(threadgroup09.scheduledDuration,1)}</stringProp>
-				<stringProp name="ThreadGroup.delay">${__P(threadgroup09.scheduledDelay,0)}</stringProp>
-			</ThreadGroup>
-			<hashTree>
-				<CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
-					<stringProp name="delimiter">;</stringProp>
-					<stringProp name="fileEncoding"></stringProp>
-					<stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup09.dataFile)}</stringProp>
-					<boolProp name="quotedData">false</boolProp>
-					<boolProp name="recycle">true</boolProp>
-					<stringProp name="shareMode">All threads</stringProp>
-					<boolProp name="stopThread">false</boolProp>
-					<stringProp name="variableNames">requestPath</stringProp>
-				</CSVDataSet>
-				<hashTree/>
-				<ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
-										 testname="Throughput" enabled="true">
-					<stringProp name="calcMode">all active threads in current thread group</stringProp>
-					<stringProp name="throughput">${__P(threadgroup09.throughput)}</stringProp>
-					<stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
-				</ConstantThroughputTimer>
-				<hashTree/>
-				<SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
-								  enabled="true">
-					<stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
-					<stringProp name="SwitchController.value">${__P(threadgroup09.withAssert)}</stringProp>
-				</SwitchController>
-				<hashTree>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="User defined variables" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup09.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree/>
-					<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
-								 enabled="true">
-						<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
-									 testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
-							<collectionProp name="Arguments.arguments"/>
-						</elementProp>
-						<stringProp name="HTTPSampler.domain">${server}</stringProp>
-						<stringProp name="HTTPSampler.port">${port}</stringProp>
-						<stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
-						<stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
-						<stringProp name="HTTPSampler.protocol"></stringProp>
-						<stringProp name="HTTPSampler.contentEncoding"></stringProp>
-						<stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup09.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
-						<stringProp name="HTTPSampler.method">GET</stringProp>
-						<boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-						<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
-						<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-						<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-						<stringProp name="HTTPSampler.FILE_NAME"></stringProp>
-						<stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
-						<stringProp name="HTTPSampler.mimetype"></stringProp>
-						<boolProp name="HTTPSampler.monitor">false</boolProp>
-						<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-					</HTTPSampler>
-					<hashTree>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup09.assertOK">${__P(threadgroup09.assertOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">2</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-						<ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
-										   enabled="true">
-							<collectionProp name="Asserion.test_strings">
-								<stringProp name="threadgroup09.assertNotOK">${__P(threadgroup09.assertNotOK)}</stringProp>
-							</collectionProp>
-							<stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-							<boolProp name="Assertion.assume_success">false</boolProp>
-							<intProp name="Assertion.test_type">6</intProp>
-						</ResponseAssertion>
-						<hashTree/>
-					</hashTree>
-				</hashTree>
-			</hashTree>
-		</hashTree>
-	</hashTree>
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Testplan" enabled="true">
+      <stringProp name="TestPlan.comments">This is the main test plan</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel"
+             testclass="Arguments" testname="User defined variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="server" elementType="Argument">
+            <stringProp name="Argument.name">server</stringProp>
+            <stringProp name="Argument.value">${__property(server)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">${__property(port)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="urlListPath" elementType="Argument">
+            <stringProp name="Argument.name">urlListPath</stringProp>
+            <stringProp name="Argument.value">${__property(urlListPath)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="urlPrefix" elementType="Argument">
+            <stringProp name="Argument.name">urlPrefix</stringProp>
+            <stringProp name="Argument.value">${__javaScript( &quot;${__property(urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="jmeterServerId" elementType="Argument">
+            <stringProp name="Argument.name">jmeterServerId</stringProp>
+            <stringProp name="Argument.value">${__machineName}:${__P(server_port,1099)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="connectionTimeout" elementType="Argument">
+            <stringProp name="Argument.name">connectionTimeout</stringProp>
+            <stringProp name="Argument.value">${__P(connectionTimeout,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="responseTimeout" elementType="Argument">
+            <stringProp name="Argument.name">responseTimeout</stringProp>
+            <stringProp name="Argument.value">${__P(responseTimeout,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+        <stringProp name="TestPlan.comments">via test.properties</stringProp>
+      </Arguments>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="ResultsTree"
+               enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <url>true</url>
+            <hostname>true</hostname>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report"
+               enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <url>true</url>
+            <hostname>true</hostname>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer"
+               enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>false</success>
+            <label>true</label>
+            <code>true</code>
+            <message>false</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>true</responseHeaders>
+            <requestHeaders>true</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <url>true</url>
+            <fileName>true</fileName>
+            <sampleCount>true</sampleCount>
+          </value>
+        </objProp>
+        <stringProp name="filename">${__P(resultFileInGuiMode,result.csv)}</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results"
+               enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>false</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>false</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <hostname>true</hostname>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup00.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup00.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup00.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup00.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup00.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup00.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup00.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup00.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup00.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup00.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup00.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup00.assertOK">${__P(threadgroup00.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup00.assertNotOK">${__P(threadgroup00.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup01.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup01.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup01.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup01.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup01.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup01.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup01.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup01.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup01.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup01.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup01.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup01.assertOK">${__P(threadgroup01.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup01.assertNotOK">${__P(threadgroup01.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup02.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup02.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup02.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup02.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup02.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup02.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup02.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup02.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup02.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup02.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup02.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup02.assertOK">${__P(threadgroup02.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup02.assertNotOK">${__P(threadgroup02.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup03.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup03.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup03.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup03.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup03.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup03.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup03.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup03.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup03.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup03.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup03.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup03.assertOK">${__P(threadgroup03.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup03.assertNotOK">${__P(threadgroup03.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup04.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup04.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup04.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup04.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup04.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup04.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup04.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup04.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup04.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup04.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup04.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup04.assertOK">${__P(threadgroup04.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup04.assertNotOK">${__P(threadgroup04.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup05.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup05.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup05.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup05.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup05.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup05.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup05.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup05.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup05.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup05.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup05.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup05.assertOK">${__P(threadgroup05.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup05.assertNotOK">${__P(threadgroup05.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup06.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup06.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup06.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup06.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup06.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup06.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript(&quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup06.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup06.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup06.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup06.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup06.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup06.assertOK">${__P(threadgroup06.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup06.assertNotOK">${__P(threadgroup06.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup07.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup07.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup07.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup07.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup07.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup07.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup07.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup07.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup07.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup07.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup07.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup07.assertOK">${__P(threadgroup07.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup07.assertNotOK">${__P(threadgroup07.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup08.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup08.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup08.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup08.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup08.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup08.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup08.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup08.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup08.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup08.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup08.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup08.assertOK">${__P(threadgroup08.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup08.assertNotOK">${__P(threadgroup08.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__P(threadgroup09.name,none)}"
+             enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel"
+               testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${__P(threadgroup09.numberOfLoops,1)}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threadgroup09.numberOfThreads,0)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(threadgroup09.rampUp,1)}</stringProp>
+        <longProp name="ThreadGroup.start_time">0</longProp>
+        <longProp name="ThreadGroup.end_time">0</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(threadgroup09.scheduledDuration,1)}</stringProp>
+        <stringProp name="ThreadGroup.delay">${__P(threadgroup09.scheduledDelay,0)}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
+          <stringProp name="delimiter">;</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup09.dataFile)}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">All threads</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">requestPath</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer"
+                     testname="Throughput" enabled="true">
+          <stringProp name="calcMode">all active threads in current thread group</stringProp>
+          <stringProp name="throughput">${__P(threadgroup09.throughput)}</stringProp>
+          <stringProp name="TestPlan.comments">per ThreadGroup</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <SwitchController guiclass="SwitchControllerGui" testclass="SwitchController" testname="withAssert"
+                  enabled="true">
+          <stringProp name="TestPlan.comments">1 for request with assertion</stringProp>
+          <stringProp name="SwitchController.value">${__P(threadgroup09.withAssert)}</stringProp>
+        </SwitchController>
+        <hashTree>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="User defined variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup09.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree/>
+          <HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="${requestPath}"
+                 enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel"
+                   testclass="Arguments" testname="Benutzer definierte Variablen" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">${connectionTimeout}</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup09.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.FILE_NAME"></stringProp>
+            <stringProp name="HTTPSampler.FILE_FIELD"></stringProp>
+            <stringProp name="HTTPSampler.mimetype"></stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSampler>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="OK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup09.assertOK">${__P(threadgroup09.assertOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="NotOK"
+                       enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="threadgroup09.assertNotOK">${__P(threadgroup09.assertNotOK)}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
 </jmeterTestPlan>
