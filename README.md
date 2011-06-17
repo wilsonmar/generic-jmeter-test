@@ -2,7 +2,7 @@
 
 I put together a simple jmeter test framework with start scripts for Linux/Unix/Solaris/OSX and Windows.
 
-## Why should I use it? ##
+## Why should you use it? ##
 
  * It's easy to use and easily configurable.
  * Everything you will have to do is adapt the `test.properties`
