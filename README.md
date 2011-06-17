@@ -63,3 +63,24 @@ You could use a website crawler/broken link checker to generate a URL list for y
 
  * Windows/Linux (using Wine): [Xenu's link sleuth](http://home.snafu.de/tilman/xenulink.html)
  * Mac OSX: [Integrity](http://peacockmedia.co.uk/integrity/)
+
+## Using JMeter GUI ##
+
+**first draft, pics are missing:**
+
+ * If you run the test with GUI, the results will NOT be written to the result.csv file automatically.
+
+In GUI mode, you have several options.
+
+### There are four Result Processors which are deactivated: ###
+
+ * `Results Tree` -> Show each request, with response, status, assertions ...
+ * `Summary Report` -> Shows just a summary across all requests
+ * `Simple Data Writer` -> Writes the results to a csv file
+ * `Graph Results` -> Shows the requests as dots, with average. Can be saved as a picture.
+
+You can easily enable each of the processors by right clicking on the node and selecting **enable**
+
+If you changed something like activating a Request Processor:
+
+**After you are done testing and you close JMeter, do not save changes to the test file as it suggests!**
