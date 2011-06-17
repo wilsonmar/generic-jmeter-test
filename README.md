@@ -48,6 +48,8 @@ You can either modify the config file `test.conf` to fit your needs, or pass all
         -p: propertyfile to use for test run. Default: test.properties
     Version: 1.0
 
+The shell script will automatically generate `log/` and `report/` folders and output files.
+
 ### Windows
 
 See scripts and description in `windows-scripts/` folder.
