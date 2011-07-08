@@ -2,11 +2,16 @@
 
 I put together a simple jmeter test framework with start scripts for Linux/Unix/Solaris/OSX and Windows.
 
+It consists of a JMeter test JMX (XML) which is configured using a properties file.
+The Test supports 10 threadgroups which can be configured individually using many JMeter features like Asserts,
+
+The main goal is to save time using the JMX file out-of-the-box and only change the properties file since modifying the JMX file is tedious work.
+
 ## Why should you use it? ##
 
  * It's easy to use and easily configurable.
  * Everything you will have to do is adapt the `test.properties`
- * You won't have to change the test if you want to test different websites/web applications
+ * You won't have to change the test if you want to test different websites/web applications.
  * All you need is a host to test and at least one URL list.
  * All settings can be individually set for all threadgroups so that one threadgroup could test articles, one overview pages and another one images.
     Currently, ten different threadgroups are implemented.
