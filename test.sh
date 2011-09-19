@@ -24,8 +24,8 @@ debug() {
 
 #read configfile
 #default values for internal variables are configured there.
-#configFile=mozilla-test.conf
-configFile=test.conf
+configFile=mozilla-test.conf
+#configFile=test.conf
 if [ -f ${configFile} ] ; then
   . ${configFile}
 else

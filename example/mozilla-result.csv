@@ -1,10 +1,10 @@
 timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,bytes,Latency
-1300813664019,1316,/new/,200,OK,homepage 1-1,text,false,76874,890
-1300813664418,1216,/features/,200,OK,homepage 1-2,text,true,70392,703
-1300813665075,373,/security/,200,OK,homepage 1-1,text,true,28541,201
-1300813665712,509,/jmetertest/,404,Not Found,homepage 1-2,text,false,16723,350
-1300813667548,846,/performance/,200,OK,homepage 1-1,text,true,24754,681
-1300813668186,983,/customize/,200,OK,homepage 1-2,text,true,35611,708
-1300813669334,632,/technology/,200,OK,homepage 1-1,text,true,46111,628
+1300813664019,1316,/en-US/firefox/new/,200,OK,homepage 1-1,text,false,76874,890
+1300813664418,1216,/en-US/firefox/features/,200,OK,homepage 1-2,text,true,70392,703
+1300813665075,373,/en-US/firefox/security/,200,OK,homepage 1-1,text,true,28541,201
+1300813665712,509,/en-US/firefox/jmetertest/,404,Not Found,homepage 1-2,text,false,16723,350
+1300813667548,846,/en-US/firefox/performance/,200,OK,homepage 1-1,text,true,24754,681
+1300813668186,983,/en-US/firefox/customize/,200,OK,homepage 1-2,text,true,35611,708
+1300813669334,632,/en-US/firefox/technology/,200,OK,homepage 1-1,text,true,46111,628
 
 Note: Sample TimeStamps are START times

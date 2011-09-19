@@ -24,16 +24,6 @@
             <stringProp name="Argument.value">${__property(port)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="urlListPath" elementType="Argument">
-            <stringProp name="Argument.name">urlListPath</stringProp>
-            <stringProp name="Argument.value">${__property(urlListPath)}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="urlPrefix" elementType="Argument">
-            <stringProp name="Argument.name">urlPrefix</stringProp>
-            <stringProp name="Argument.value">${__javaScript( &quot;${__property(urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="jmeterServerId" elementType="Argument">
             <stringProp name="Argument.name">jmeterServerId</stringProp>
             <stringProp name="Argument.value">${__machineName}:${__P(server_port,1099)}</stringProp>
@@ -213,7 +203,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup00.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup00.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -246,7 +236,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup00.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -271,7 +261,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup00.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -327,7 +317,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup01.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup01.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -360,7 +350,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup01.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -385,7 +375,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup01.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -441,7 +431,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup02.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup02.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -474,7 +464,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup02.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -499,7 +489,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup02.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -555,7 +545,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup03.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup03.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -588,7 +578,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup03.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -613,7 +603,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup03.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -669,7 +659,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup04.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup04.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -702,7 +692,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup04.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -727,7 +717,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup04.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -783,7 +773,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup05.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup05.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -816,7 +806,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup05.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -841,7 +831,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup05.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -897,7 +887,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript(&quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup06.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup06.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -930,7 +920,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup06.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -955,7 +945,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup06.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -1011,7 +1001,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup07.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup07.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -1044,7 +1034,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup07.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -1069,7 +1059,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup07.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -1125,7 +1115,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup08.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup08.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -1158,7 +1148,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup08.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -1183,7 +1173,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup08.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -1239,7 +1229,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="RequestPath" enabled="true">
           <stringProp name="delimiter">;</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">${__javaScript( &quot;${urlListPath}&quot;.replace(/__NULL__/\,&quot;&quot;))}${__P(threadgroup09.dataFile)}</stringProp>
+          <stringProp name="filename">${__P(threadgroup09.dataFile)}</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">All threads</stringProp>
@@ -1272,7 +1262,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup09.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
@@ -1297,7 +1287,7 @@
             <stringProp name="HTTPSampler.response_timeout">${responseTimeout}</stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${urlPrefix}${__javaScript( &quot;${__P(threadgroup09.urlPrefix)}&quot;.replace(/__NULL__/\,&quot;&quot;) )}${requestPath}</stringProp>
+            <stringProp name="HTTPSampler.path">${requestPath}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
