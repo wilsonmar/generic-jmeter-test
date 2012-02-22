@@ -10,7 +10,7 @@ rem PREPARATION
 rem rem
 
 set testProperties=test.properties
-set testFile=test.jmx
+set testPlan=test.jmx
 set resultFile=result.csv
 set jmeterLogFile='jmeter_'yyyyMMddHHmmss'.log'
 
@@ -27,7 +27,7 @@ rem rem
 
 
 rem JMETER_BIN is set, run script.
-call %JMETER_BIN%\jmeter %jmeterArgs% -t %testFile% -l %resultFile% -p %testProperties% -j %jmeterLogFile%
+call %JMETER_BIN%\jmeter %jmeterArgs% -t %testPlan% -l %resultFile% -p %testProperties% -j %jmeterLogFile%
 goto END
 
 :abort

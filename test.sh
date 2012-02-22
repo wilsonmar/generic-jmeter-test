@@ -143,7 +143,7 @@ if [ ! ${debug} -eq 0 ] ; then
 fi
 
 #run test
-${jmeter} -t ${testFile} -l ${resultFile} \
+${jmeter} -t ${testPlan} -l ${resultFile} \
   ${jmeterOptions} -p ${testProperties} \
   -j ${jmeterLogFile} \
   >> ${logFile}

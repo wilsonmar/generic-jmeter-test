@@ -1,11 +1,11 @@
 # Generic JMeter test #
 
-I put together a simple jmeter test framework with start scripts for Linux/Unix/Solaris/OSX and Windows.
+I put together a simple JMeter test framework with start scripts for Linux/Unix/Solaris/OSX and Windows.
 
-It consists of a JMeter test JMX (XML) which is configured using a properties file.
-The Test supports 10 threadgroups which can be configured individually using many JMeter features like Asserts,
+It consists of a JMeter Testplan `test.jmx` which is configured using a properties file `test.properties`.
+The Test supports 4 threadgroups which can be configured individually.
 
-The main goal is to save time using the JMX file out-of-the-box and only change the properties file since modifying the JMX file is tedious work.
+The main goal is to save time using the Testplan out-of-the-box and only change the properties file since modifying the Testplan XML is tedious work.
 
 ## Why should you use it? ##
 
@@ -13,10 +13,9 @@ The main goal is to save time using the JMX file out-of-the-box and only change 
  * Everything you will have to do is adapt the `test.properties`
  * You won't have to change the test if you want to test different websites/web applications.
  * All you need is a host to test and at least one URL list.
- * All settings can be individually set for all threadgroups so that one threadgroup could test articles, one overview pages and another one images.
-    Currently, ten different threadgroups are implemented.
+ * All settings can be individually set for all threadgroups so that one threadgroup could test articles, one overview pages and another one images. Currently, 4 different threadgroups are implemented. If you want to use more threadgroups, just copy a whole threadgroup configuration and duplicate a threadgroup in the Testplan.
  * You can start the test locally or remotely on JMeter servers if you want to.
- * This test (with the properties) also works with the [maven-jmeter-plugin](https://github.com/Ronnie76er/jmeter-maven-plugin)
+ * This test also works with the [JMeter Maven Plugin][1]. See the [JMeter Maven Plugin Example][5] test.
 
 ## Contents ##
 
@@ -31,7 +30,7 @@ The main goal is to save time using the JMX file out-of-the-box and only change 
 
 ### Software ###
 
- * Download and extract [JMeter](http://jakarta.apache.org/jmeter/)
+ * Download and extract [JMeter][2]
  * Set the environment variable `JMETER_BIN` to the bin directory of the jmeter installation you just extracted.
 
 ### Linux/Unix
@@ -66,8 +65,8 @@ You can set a URL prefix for the whole test (e.g. "/servlet") and a URL prefix f
 
 You could use a website crawler/broken link checker to generate a URL list for your test content. Possible tools:
 
- * Windows/Linux (using Wine): [Xenu's link sleuth](http://home.snafu.de/tilman/xenulink.html)
- * Mac OSX: [Integrity](http://peacockmedia.co.uk/integrity/)
+ * Windows/Linux (using Wine): [Xenu's link sleuth][3]
+ * Mac OSX: [Integrity][4]
 
 ## Using JMeter GUI ##
 
@@ -89,3 +88,9 @@ You can easily enable each of the processors by right clicking on the node and s
 If you changed something like activating a Request Processor:
 
 **After you are done testing and you close JMeter, do not save changes to the test file as it suggests!**
+
+[1]:    http://jmeter.lazerycode.com                                "JMeter Maven Plugin"
+[2]:    http://jakarta.apache.org/jmeter/                           "JMeter"
+[3]:    http://home.snafu.de/tilman/xenulink.html                   "Xenu's link sleuth"
+[4]:    http://peacockmedia.co.uk/integrity/                        "Integrity"
+[5]:    https://github.com/afranken/jmeter-maven-plugin-example     "JMeter Maven Plugin Example"
