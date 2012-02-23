@@ -69,8 +69,6 @@ You could use a website crawler/broken link checker to generate a URL list for y
 
 ## Using JMeter GUI ##
 
-**first draft, pics are missing:**
-
  * If you run the test with GUI, the results will NOT be written to the result.csv file automatically.
 
 In GUI mode, you have several options.
