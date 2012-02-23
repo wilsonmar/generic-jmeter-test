@@ -61,7 +61,6 @@ See scripts and description in `windows-scripts/` folder.
 ## URL lists ##
 
 The URLs in the file have to be relative to the hostname.
-You can set a URL prefix for the whole test (e.g. "/servlet") and a URL prefix for each threadgroup (e.g. "/code", "/images") in the `test.properties`.
 
 You could use a website crawler/broken link checker to generate a URL list for your test content. Possible tools:
 
