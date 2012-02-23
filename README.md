@@ -19,12 +19,12 @@ The main goal is to save time using the Testplan out-of-the-box and only change 
 
 ## Contents ##
 
- * `example/` -> contains an example configuration for a test agains mozilla.com
- * `windows-scripts/` -> contains command line scripts for Windows
+ * `example/` -> contains an example configuration for a test against mozilla.com. See separate README.md
+ * `windows-scripts/` -> contains command line scripts for Windows. See separate README.md
  * `test.conf` -> configuration for the test.sh script
- * `test.jmx` -> the JMeter XML test definition
+ * `test.jmx` -> the JMeter Testplan
  * `test.properties` -> configuration blueprint for the JMeter test
- * `testDataFile` -> contains the URLs
+ * `test.sh` -> start the test with this script.
 
 ## Preparation ##
 
